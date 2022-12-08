@@ -81,7 +81,7 @@ async def pingme(client: Client, message: Message):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     txt = f"❏ **╰☞ 𝗣𝗢𝗡𝗚™╮**\n"
-    txt += f"├• **╰☞** - `%sms`\n"
+    txt += f"├• **╰☞** - `{duration}ms`\n"
     txt += f"├• **╰☞ -** `{uptime}` \n"
     txt += f"└• **╰☞:** {client.me.mention}"
     x = PING_MEDIA[-3:]
