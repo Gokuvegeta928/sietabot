@@ -3,7 +3,7 @@ from pyrogram.types import Message
 hl = "."
 from Zaid.database.sudo import *
 
-async def eor(m, t):
+async def eor(m: Message, t):
     try:
         await m.edit(t)
     except:
