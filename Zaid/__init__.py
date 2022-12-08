@@ -16,7 +16,7 @@ ids = []
 SUDO_USERS.append(OWNER_ID)
 aiosession = ClientSession()
 
-async def load_sudos()
+async def load_sudos():
     global SUDO_USER
     x = await get_sudos()
     SUDO_USER += x
