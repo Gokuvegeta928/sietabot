@@ -9,6 +9,7 @@ MONGO_URL = getenv("MONGO_URL", "mongodb+srv://Lightyagami10:light@cluster0.zo6b
 BOT_TOKEN = getenv("BOT_TOKEN", "5942608707:AAHMVoTnnauHTdFxB5unFlGFcNNWjIT9BOU")
 ALIVE_PIC = getenv("ALIVE_PIC", "https://te.legra.ph/file/0fc684fcc026189c1922a.mp4")
 ALIVE_TEXT = getenv("ALIVE_TEXT")
+PING_MEDIA = getenv("PING_MEDIA", None)
 PM_LOGGER = getenv("PM_LOGGER")
 LOG_GROUP = getenv("LOG_GROUP")
 GIT_TOKEN = getenv("GIT_TOKEN") #personal access token
