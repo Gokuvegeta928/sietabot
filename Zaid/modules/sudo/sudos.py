@@ -23,6 +23,7 @@ async def get_id(m: Message):
         id = m.reply_to_message.from_user.id
     return id 
 
+@Client.on_message(filters.command(["addsudo", "rmsudo"], "."))
 async def add_or_del_sudo(_, m):
     me = await _.get_me()
     if m.from_user.id != me.id:
@@ -42,6 +43,7 @@ async def add_or_del_sudo(_, m):
     await add_sudo(id)
     return await eor(m, f"<i>{id} is added to sudo...!</i>")
 
+@Client.on_message(filters.command("sudos", "."))
 async def sudo_users(_, m):
     me = await _.get_me()
     sudo = await is_sudo(m.from_user.id)
