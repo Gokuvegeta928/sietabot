@@ -20,8 +20,6 @@ async def load_sudos():
     global SUDO_USER
     x = await get_sudos()
     SUDO_USER += x
-    
-asyncio.create_task(load_sudos())
 
 if API_ID:
    API_ID = API_ID
