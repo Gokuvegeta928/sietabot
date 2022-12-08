@@ -84,19 +84,15 @@ async def pingme(client: Client, message: Message):
     txt += f"├• **╰☞** - `%sms`\n"
     txt += f"├• **╰☞ -** `{uptime}` \n"
     txt += f"└• **╰☞:** {client.me.mention}"
-    try:
+    x = PING_MEDIA[-3:]
+    if x == "jpg":
         await m.reply_photo(PING_MEDIA, caption=txt)
         await xx.delete()
-    except:
-        try:
-            await m.reply_animation(PING_MEDIA, caption=txt)
-            await xx.delete()
-        except:
-            try:
-                await m.reply_video(PING_MEDIA, caption=txt)
-                await xx.delete()
-            except:
-                await xx.edit(txt)
+    elif x == "mp4":
+        await m.reply_video(PING_MEDIA, caption=txt)
+        await xx.delete()
+    else:
+        await xx.edit(txt)
 
 
 add_command_help(
