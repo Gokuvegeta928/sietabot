@@ -3,6 +3,8 @@ from config import API_ID, API_HASH, SUDO_USERS, OWNER_ID, BOT_TOKEN, STRING_SES
 from datetime import datetime
 import time
 from aiohttp import ClientSession
+from Zaid.database.sudo import get_sudos
+import asyncio
 
 StartTime = time.time()
 START_TIME = datetime.now()
@@ -13,6 +15,13 @@ ids = []
 
 SUDO_USERS.append(OWNER_ID)
 aiosession = ClientSession()
+
+async def load_sudos()
+    global SUDO_USER
+    x = await get_sudos()
+    SUDO_USER += x
+    
+asyncio.create_task(load_sudos())
 
 if API_ID:
    API_ID = API_ID
