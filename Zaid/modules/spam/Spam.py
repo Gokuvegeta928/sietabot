@@ -49,32 +49,15 @@ async def delayspam(client: Client, message: Message):
         return await message.reply_text(
             "**This command is not allowed to be used in this group**"
         )
-    delayspam = await extract_args(message)
-    arr = delayspam.split()
-    if len(arr) < 3 or not arr[0].isdigit() or not arr[1].isdigit():
-        await message.reply_text("`Something seems missing / wrong.`")
-        return
-    delay = int(arr[0])
-    count = int(arr[1])
-    spam_message = delayspam.replace(arr[0], "", 1)
-    spam_message = spam_message.replace(arr[1], "", 1).strip()
-    await message.delete()
-
-    if not spam_allowed():
-        return
-
-    delaySpamEvent = Event()
+    try:
+        delay = int(message.text.split()[1])
+        count = int(message.text.split()[2])
+        txt = message.text.split(None, 3)[3]
+    except:
+        return await message.reply("Babu thoda dekha kro !")
     for i in range(0, count):
-        if i != 0:
-            delaySpamEvent.wait(delay)
-        await client.send_message(message.chat.id, spam_message)
-        limit = increment_spam_count()
-        if not limit:
-            break
-
-    await client.send_message(
-        LOG_GROUP, "**#DELAYSPAM**\nDelaySpam was executed successfully"
-    )
+        await client.send_message(message.chat.id, txt)
+        time.sleep(delay)
 
 
 @Client.on_message(
