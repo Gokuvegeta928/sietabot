@@ -1,8 +1,6 @@
 from . import cli
 
-db = cli.Zaid
-
-sudodb = db.sudo
+sudodb = cli["Zaid"]["sudo"]
 
 async def add_sudo(user_id: int):
     sudo = await sudodb.find_one({"user_id": user_id})
