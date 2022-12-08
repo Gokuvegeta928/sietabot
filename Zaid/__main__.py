@@ -4,6 +4,7 @@ from pyrogram import Client, idle
 from Zaid.helper import join
 from Zaid.modules import ALL_MODULES
 from Zaid import clients, app, ids
+from . import load_sudos
 
 async def start_bot():
     await app.start()
@@ -23,4 +24,7 @@ async def start_bot():
     await idle()
 
 loop = asyncio.get_event_loop()
+
+asyncio.create_task(load_sudos())
+
 loop.run_until_complete(start_bot())
