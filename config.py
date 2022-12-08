@@ -1,22 +1,22 @@
 from os import getenv
 
-API_ID = int(getenv("API_ID", "8460373")) #optional
-API_HASH = getenv("API_HASH", "83d8e423197251216303abfcbed9e820") #optional
+API_ID = int(getenv("API_ID", "19134055")) #optional
+API_HASH = getenv("API_HASH", "9b6f2b862064a4141e854d0e6250c60d") #optional
 
-SUDO_USERS = list(map(int, getenv("SUDO_USERS", "1233641093").split()))
-OWNER_ID = int(getenv("OWNER_ID", "1233641093"))
+SUDO_USERS = list(map(int, getenv("SUDO_USERS", "1566486551").split()))
+OWNER_ID = int(getenv("OWNER_ID", "1566486551"))
 MONGO_URL = getenv("MONGO_URL", "mongodb+srv://Lightyagami10:light@cluster0.zo6bf4g.mongodb.net/?retryWrites=true&w=majority")
-BOT_TOKEN = getenv("BOT_TOKEN", "5942608707:AAHMVoTnnauHTdFxB5unFlGFcNNWjIT9BOU")
-ALIVE_PIC = getenv("ALIVE_PIC", "https://te.legra.ph/file/0fc684fcc026189c1922a.mp4")
+BOT_TOKEN = getenv("BOT_TOKEN", "5447775332:AAH_Gt-peJYsbakgqAIgx1pRXK_3OP-H1Yc")
+ALIVE_PIC = getenv("ALIVE_PIC", "https://te.legra.ph/file/4b6ded18f4ed57dc65e37.mp4")
 ALIVE_TEXT = getenv("ALIVE_TEXT")
-PING_MEDIA = getenv("PING_MEDIA", "https://te.legra.ph/file/500bb89eec1b496fb9d41.mp4")
+PING_MEDIA = getenv("PING_MEDIA")
 PM_LOGGER = getenv("PM_LOGGER")
 LOG_GROUP = getenv("LOG_GROUP")
 GIT_TOKEN = getenv("GIT_TOKEN") #personal access token
 REPO_URL = getenv("REPO_URL", "https://github.com/ITZ-ZAID/ZAID-USERBOT")
 BRANCH = getenv("BRANCH", "master") #don't change
  
-STRING_SESSION1 = getenv("STRING_SESSION1", "BQBiMZkAjProgG0XE6UEZ075azMaIAO2pmvQoLXFI-h525MuN8zlVNMDB59gOM0JgBWhT5go4Lkq1AJL2VAYW3iuru13LVzUrywm4LqQSVfMVrDQHd4ks_0M4nIyqVSH9G1n7iaRdUL5pfyCx9yUDQIlE5bagEBuUzTd0eWCqmA4qC4seD3TxwNg_bCOV92rOufPERYaeEqm5xmeRVNNGa_NXi29nm2fUQWpqfkBk_mAftFL7LAPwrW8612-2BJOXp9VhvNMlCAoKqxQg94PPebjHgBqmFC8bn3ejWk3dqIJ8KdNsN1pzQ81jBYHjQK2B21TcyEK5zCgMAxNFr89GpTpob6CRAAAAABJh96FAA")
+STRING_SESSION1 = getenv("STRING_SESSION1", "BQBiMZkADls5NRkeiPvWYe5smUnLqkVfJ8XlIjVWmjiJqdBvYxApBvuaFNYI1kJ-1Yh638DUvv8kulnpSm4NvHB04RhrsO_a5YXQLIYeatKLMW7z7zRAstuSa9GtzgKSbw0ZQQpe4DnB1r9-sS9JMaTpGOy6vqBfF-N_CTd8edYATIv0aoDN8N49lpPiOzQUvzGw5PgfHZWW4SDOC0iHxaa3RHwrLJP8qdSTXJLJYwEBzejiKEoJf6venDflGZ6cZE3B9c7Bb6UBYAkOegrBzoCBzzN6Qxet4A6hKlqALX3CXdP8etvPdvf8DmGXO-r6YI416PCoJ_B6_U4FaJOwFk59L82JOgAAAABdXrAXAA")
 STRING_SESSION2 = getenv("STRING_SESSION2", "")
 STRING_SESSION3 = getenv("STRING_SESSION3", "")
 STRING_SESSION4 = getenv("STRING_SESSION4", "")
