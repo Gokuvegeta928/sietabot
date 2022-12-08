@@ -86,10 +86,10 @@ async def pingme(client: Client, message: Message):
     txt += f"└• **╰☞:** {client.me.mention}"
     x = PING_MEDIA[-3:]
     if x == "jpg":
-        await m.reply_photo(PING_MEDIA, caption=txt)
+        await message.reply_photo(PING_MEDIA, caption=txt)
         await xx.delete()
     elif x == "mp4":
-        await m.reply_video(PING_MEDIA, caption=txt)
+        await message.reply_video(PING_MEDIA, caption=txt)
         await xx.delete()
     else:
         await xx.edit(txt)
