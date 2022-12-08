@@ -50,7 +50,7 @@ async def delayspam(client: Client, message: Message):
             "**This command is not allowed to be used in this group**"
         )
     try:
-        delay = int(message.text.split()[1])
+        delay = float(message.text.split()[1])
         count = int(message.text.split()[2])
         txt = message.text.split(None, 3)[3]
     except:
