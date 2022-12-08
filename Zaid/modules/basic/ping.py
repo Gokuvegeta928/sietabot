@@ -5,7 +5,7 @@ import speedtest
 from pyrogram import Client, filters
 from pyrogram.raw import functions
 from pyrogram.types import Message
-
+from config import PING_MEDIA
 from Zaid import StartTime, app, SUDO_USER
 from Zaid.helper.PyroHelpers import SpeedConvert
 from Zaid.modules.bot.inline import get_readable_time
@@ -80,12 +80,23 @@ async def pingme(client: Client, message: Message):
     await xx.edit("**100% ██████████**")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await xx.edit(
-        f"❏ **╰☞ 𝗣𝗢𝗡𝗚™╮**\n"
-        f"├• **╰☞** - `%sms`\n"
-        f"├• **╰☞ -** `{uptime}` \n"
-        f"└• **╰☞:** {client.me.mention}" % (duration)
-    )
+    txt = f"❏ **╰☞ 𝗣𝗢𝗡𝗚™╮**\n"
+    txt += f"├• **╰☞** - `%sms`\n"
+    txt += f"├• **╰☞ -** `{uptime}` \n"
+    txt += f"└• **╰☞:** {client.me.mention}"
+    try:
+        await m.reply_photo(PING_MEDIA, caption=txt)
+        await xx.delete()
+    except:
+        try:
+            await m.reply_animation(PING_MEDIA, caption=txt)
+            await xx.delete()
+        except:
+            try:
+                await m.reply_video(PING_MEDIA, caption=txt)
+                await xx.delete()
+            except:
+                await xx.edit(txt)
 
 
 add_command_help(
