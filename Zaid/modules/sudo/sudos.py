@@ -25,23 +25,26 @@ async def get_id(m: Message):
 
 @Client.on_message(filters.command(["addsudo", "rmsudo"], "."))
 async def add_or_del_sudo(_, m):
-    me = await _.get_me()
-    if m.from_user.id != me.id:
-        return
     try:
-        id = await get_id(m)
-    except:
-        return await eor(m, f"<i>{hl}addsudo or {hl}rmvsudo [Reply | Username | Id]</id>")
-    sudo = await is_sudo(id)
-    if m.text.split()[0][1].lower() == "r":
-        if not sudo:
-            return await eor(m, f"<i>This user isn't sudo..!</i>")
-        await del_sudo(id)
-        return await eor(m, f"<i>Sudo removed for the user {id} .</i>")
-    if sudo:
-        return await eor(m, f"<i>{id} is already a sudo user..!</i>")
-    await add_sudo(id)
-    return await eor(m, f"<i>{id} is added to sudo...!</i>")
+        me = await _.get_me()
+        if m.from_user.id != me.id:
+            return
+        try:
+            id = await get_id(m)
+        except:
+            return await eor(m, f"<i>{hl}addsudo or {hl}rmvsudo [Reply | Username | Id]</id>")
+        sudo = await is_sudo(id)
+        if m.text.split()[0][1].lower() == "r":
+            if not sudo:
+                return await eor(m, f"<i>This user isn't sudo..!</i>")
+            await del_sudo(id)
+            return await eor(m, f"<i>Sudo removed for the user {id} .</i>")
+        if sudo:
+            return await eor(m, f"<i>{id} is already a sudo user..!</i>")
+        await add_sudo(id)
+        return await eor(m, f"<i>{id} is added to sudo...!</i>")
+    except Exception as e:
+        await m.reply(e)
 
 @Client.on_message(filters.command("sudos", "."))
 async def sudo_users(_, m):
